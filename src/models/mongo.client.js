@@ -42,7 +42,7 @@ const connectMongoDB = async () => {
     const MONGODB_DATABASE_NAME = process.env.MONGODB_DATABASE_NAME;
     await mongoose.connect(`${MONGODB_CONNECTION_STRING}`,
         {
-            serverSelectionTimeoutMS:3000,
+            serverSelectionTimeoutMS:9000,
             dbName: MONGODB_DATABASE_NAME
         }
     );
