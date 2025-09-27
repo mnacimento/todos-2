@@ -38,7 +38,16 @@ app.use(authMiddleWare);
 // Private
 app.use("/v1", privateRouter);
 
-const PORT = process.env.PORT;
-app.listen(PORT, () => {
-  console.log(`Listen & serve PORT: ${PORT}`);
-});
+// const PORT = process.env.PORT;
+// app.listen(PORT, () => {
+//   console.log(`Listen & serve PORT: ${PORT}`);
+// });
+module.exports = app;
+
+// Solo escuchá el puerto si el archivo se ejecuta directamente (desarrollo local)
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Listen & serve PORT: ${PORT}`);
+  });
+}
