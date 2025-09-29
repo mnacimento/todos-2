@@ -3,7 +3,7 @@ const healthController = (req, res) => {
 };
 
 const pingController = (req, res) => {
-  res.status(200).send("pong");
+  res.status(200).send("pang");
 };
 
 module.exports = {
