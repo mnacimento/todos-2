@@ -33,7 +33,6 @@ app.use(loggerMiddleWare);
 // Rutas públicas
 app.use("/", publicRouter);
 
-// Rutas de autenticación públicas
 app.use("/v1/auth", authRouter);
 
 app.use(authMiddleWare);
