@@ -12,7 +12,7 @@ const publicRouter = require("./routes/public.router");
 const authRouter = require("./routes/auth.router");
 const connectMongoDB = require("./models/mongo.client");
 
-// Conexión a MongoDB (no usar process.exit en serverless)
+// Conexión a MongoDB
 (async () => {
   try {
     await connectMongoDB();
@@ -21,7 +21,6 @@ const connectMongoDB = require("./models/mongo.client");
       "Ha ocurrido un error al conectarse a la base de datos de MongoDB",
       error
     );
-    // En Vercel, NO terminar el proceso; deja que la request falle y revisa logs.
   }
 })();
 
@@ -40,7 +39,7 @@ app.use("/v1/auth", authRouter);
 // Middleware de auth para el resto
 app.use(authMiddleWare);
 
-// Rutas privadas
+// privadas
 app.use("/v1", privateRouter);
 
 // Exportar la app para que Vercel la use como handler
