@@ -36,7 +36,6 @@ app.use("/", publicRouter);
 // Rutas de autenticación públicas
 app.use("/v1/auth", authRouter);
 
-// Middleware de auth para el resto
 app.use(authMiddleWare);
 
 // privadas
