@@ -30,7 +30,6 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(loggerMiddleWare);
 
-// Rutas públicas
 app.use("/", publicRouter);
 
 app.use("/v1/auth", authRouter);
